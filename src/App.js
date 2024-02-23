@@ -1,10 +1,9 @@
 import React from 'react'
+import MainBody from './Components/MainBody/MainBody'
 
 const App = () => {
   return (
-    <div className='text3xl text-green-500'>
-      Netflix GPT
-    </div>
+    <MainBody/>
   )
 }
 
