@@ -189,7 +189,7 @@ const LoginForm = () => {
               {isSingInForm ? "New to Netflix? " : "Already have an account? "}
               <Link
                 to="#"
-                className="text-white font-bold"
+                className="text-white font-bold ml-1"
                 onClick={() => {
                   setIsSingInForm(!isSingInForm);
                   formikRef?.current?.resetForm();

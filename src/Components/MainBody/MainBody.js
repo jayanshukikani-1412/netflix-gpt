@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../Utils/FirbaseConfig";
 import { ADD_USER, REMOVE_USER } from "../../Redux/Slices/UserSlice";
+import ProtectedRoutes from "../../Utils/ProtectedRoutes";
 
 const MainBody = () => {
   const dispatch = useDispatch();
@@ -14,11 +15,19 @@ const MainBody = () => {
   const appRouter = createBrowserRouter([
     {
       path: "/login",
-      element: <Login />,
+      element: (
+        <ProtectedRoutes>
+          <Login />
+        </ProtectedRoutes>
+      ),
     },
     {
       path: "/",
-      element: <HomePage />,
+      element: (
+        <ProtectedRoutes>
+          <HomePage />
+        </ProtectedRoutes>
+      ),
     },
   ]);
 
@@ -37,8 +46,10 @@ const MainBody = () => {
           phoneNumber,
         };
         dispatch(ADD_USER(userData));
+        localStorage.setItem("accessToken", accessToken);
       } else {
         dispatch(REMOVE_USER());
+        localStorage.clear();
       }
     });
   }, []);
