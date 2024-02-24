@@ -22,7 +22,7 @@ const MainBody = () => {
       ),
     },
     {
-      path: "/",
+      path: "/browse",
       element: (
         <ProtectedRoutes>
           <HomePage />
