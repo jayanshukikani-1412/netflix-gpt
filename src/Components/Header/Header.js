@@ -32,8 +32,8 @@ const Header = () => {
           <img src={LogoImage} alt="Netflix-Logo" className="w-[150px]" />
         </div>
 
-        <div className="flex items-center gap-3 mr-3">
-          <h1 className="text-white bg-black text-2xl">
+        <div className="flex items-center gap-4 mr-3">
+          <h1 className="text-white bg-black text-xl">
             {userData?.displayName}
           </h1>
           <div className="w-[40px] h-[40px] rounded-full">
@@ -52,7 +52,7 @@ const Header = () => {
             )}
           </div>
           <button
-            className="bg-redPrimary text-slate-300 px-2 py-1 rounded-sm"
+            className="bg-redPrimary text-slate-300 px-2 py-1 rounded-sm font-normal"
             onClick={logoutHandler}
           >
             Logout

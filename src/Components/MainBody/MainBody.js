@@ -33,7 +33,7 @@ const MainBody = () => {
 
   useEffect(() => {
     // Firebase API when auth state changes
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { displayName, email, photoURL, uid, accessToken, phoneNumber } =
           user;
@@ -52,6 +52,11 @@ const MainBody = () => {
         localStorage.clear();
       }
     });
+
+    // Unsubscribe when component unmount
+    return () => {
+      unsubscribe();
+    }
   }, []);
 
   return (

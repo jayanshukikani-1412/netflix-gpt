@@ -17,6 +17,7 @@ import ReactToastify, {
   showErrorToast,
   showSuccessToast,
 } from "../../../Utils/ReactToastify";
+import { PROFILE_URL } from "../../../Utils/Constant";
 
 const LoginForm = () => {
   const [isSingInForm, setIsSingInForm] = useState(true);
@@ -44,7 +45,7 @@ const LoginForm = () => {
 
           updateProfile(user, {
             displayName: fullName,
-            photoURL: "",
+            photoURL: PROFILE_URL || "",
           })
             .then(() => {
               const {
@@ -189,7 +190,7 @@ const LoginForm = () => {
               {isSingInForm ? "New to Netflix? " : "Already have an account? "}
               <Link
                 to="#"
-                className="text-white font-bold ml-1"
+                className="text-white font-bold ml-1 "
                 onClick={() => {
                   setIsSingInForm(!isSingInForm);
                   formikRef?.current?.resetForm();

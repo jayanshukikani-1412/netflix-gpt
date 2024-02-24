@@ -19,6 +19,9 @@
   - Two form using one component and usage of formik and yup
   - create common input and button as component
   - rememberme functionality - store in cache
+  - Protected routing implementation
+  - logged user data store in redux store
+  - logout functionality
 - Home page
   - Header
   - Main Movie
