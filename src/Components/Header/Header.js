@@ -27,13 +27,13 @@ const Header = () => {
 
   return (
     <>
-      <div className="absolute top-0 left-0 w-full p-2 sm:p-2 z-10 flex items-center justify-between">
+      <div className="fixed top-0 left-0 w-full p-2 sm:p-2 z-10 flex items-center justify-between">
         <div>
           <img src={LogoImage} alt="Netflix-Logo" className="w-[150px]" />
         </div>
 
         <div className="flex items-center gap-4 mr-3">
-          <h1 className="text-white bg-black text-xl">
+          <h1 className="text-white text-xl">
             {userData?.displayName}
           </h1>
           <div className="w-[40px] h-[40px] rounded-full">
@@ -52,7 +52,7 @@ const Header = () => {
             )}
           </div>
           <button
-            className="bg-redPrimary text-slate-300 px-2 py-1 rounded-sm font-normal"
+            className="bg-redPrimary text-slate-300 px-2 py-1 rounded-sm font-semibold"
             onClick={logoutHandler}
           >
             Logout

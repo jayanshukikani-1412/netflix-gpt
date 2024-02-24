@@ -67,7 +67,7 @@ const LoginForm = () => {
               dispatch(ADD_USER(userData));
               showSuccessToast("Account created successfully");
               formikRef?.current?.resetForm();
-              navigate("/browse");
+              navigate("/");
             })
             .catch((error) => {
               showErrorToast("User not updated Successfully");
@@ -82,7 +82,7 @@ const LoginForm = () => {
         .then((userCredential) => {
           showSuccessToast("Sign in successfully");
           formikRef?.current?.resetForm();
-          navigate("/browse");
+          navigate("/");
         })
         .catch((error) => {
           showErrorToast("Signin credentials are unauthorized");
