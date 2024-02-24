@@ -1,9 +1,12 @@
 {
     "cSpell.words": [
+        "Firbase",
         "Formik",
+        "reduxjs",
         "rememberme",
         "Roboto",
         "Signin",
-        "tailwindcss"
+        "tailwindcss",
+        "Toastify"
     ]
 }
