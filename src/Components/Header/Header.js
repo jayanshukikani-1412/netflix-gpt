@@ -20,6 +20,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const logoutHandler = () => {
+    dispatch(TOGGLE_IS_GPT_VALUE());
     signOut(auth)
       .then(() => {
         showSuccessToast("Logout Successful");

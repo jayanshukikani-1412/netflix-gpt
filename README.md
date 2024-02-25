@@ -13,6 +13,7 @@
 - React Redux : For Redux working with React
 - React Toastify : For display notifications in toast box
 - axios : For making api calls
+- js-cookie : For storing data in cache
 
 # Features
 

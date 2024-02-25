@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import YupSchema from "../../../Utils/YupSchema";
@@ -18,6 +18,7 @@ import ReactToastify, {
   showSuccessToast,
 } from "../../../Utils/ReactToastify";
 import { PROFILE_URL } from "../../../Utils/Constant";
+import Cookies from "js-cookie";
 
 const LoginForm = () => {
   const [isSingInForm, setIsSingInForm] = useState(true);
@@ -25,6 +26,13 @@ const LoginForm = () => {
   const formikRef = useRef();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (Cookies.get("myEmail") && Cookies.get("myPassword")) {
+      formikRef?.current?.setFieldValue("email", Cookies.get("myEmail"));
+      formikRef?.current?.setFieldValue("password", Cookies.get("myPassword"));
+    }
+  }, []);
 
   const signInSchema = Yup.object().shape({
     email: YupSchema?.email,
@@ -80,6 +88,13 @@ const LoginForm = () => {
       // Firebase Sign In Authentication API
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
+          if (rememberme) {
+            Cookies.set("myEmail", email);
+            Cookies.set("myPassword", password);
+          } else {
+            Cookies.remove("myEmail");
+            Cookies.remove("myPassword");
+          }
           showSuccessToast("Sign in successfully");
           formikRef?.current?.resetForm();
           navigate("/");
