@@ -33,5 +33,6 @@
       - Creating custom hook for getting list of now playing movie from TMDB and show one of the movie's details
   - Movie suggestions lists
 - netflix GPT
+  - Multi language is also supported in this page
   - SearchBar
   - Movie suggestions based on search from chat gpt
