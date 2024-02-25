@@ -11,13 +11,10 @@ const VideoBg = ({ id }) => {
   return (
     <div className="absolute top-0 left-0 w-screen">
       <iframe
-        // width="560"
-        // height="315"
         className="w-screen aspect-video"
-        src={`https://www.youtube.com/embed/${trailerData?.key}?&mute=1&autoplay=1`}
+        src={`https://www.youtube.com/embed/${trailerData?.key}?&mute=1&autoplay=1&controls=0&loop=1&modestbranding=1&autohide=1&showinfo=0&controls=0`}
         title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"        
       ></iframe>
     </div>
   );
