@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import MainBody from "./Components/MainBody/MainBody";
+import { Provider } from "react-redux";
+import store from "./Redux/Store";
 
 const App = () => {
   return (
-    <div className='text3xl text-green-500'>
-      Netflix GPT
-    </div>
-  )
-}
+    <Provider store={store}>
+      <MainBody />
+    </Provider>
+  );
+};
 
-export default App
+export default App;
